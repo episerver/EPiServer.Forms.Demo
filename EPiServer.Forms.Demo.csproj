@@ -113,7 +113,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppendInfoToRedirection.cs" />
+    <Compile Include="Implementation\AppendInfoToRedirection.cs" />
     <Compile Include="Controllers\DemoSubmitFormController.cs" />
     <Compile Include="DemoInitializationModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

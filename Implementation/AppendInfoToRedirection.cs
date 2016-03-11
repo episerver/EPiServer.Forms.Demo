@@ -8,7 +8,7 @@ using EPiServer.Forms.Core.Models;
 using EPiServer.ServiceLocation;
 using System.Web;
 
-namespace EPiServer.Forms.Demo
+namespace EPiServer.Forms.Demo.Implementation
 {
     /// <summary>
     /// Add more information to the redirection url when navigating to "Thank you page" after submitting Form.
