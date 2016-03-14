@@ -7,6 +7,7 @@ using EPiServer.Forms.Core;
 using EPiServer.Forms.Core.Models;
 using EPiServer.ServiceLocation;
 using System.Web;
+using EPiServer.Forms.Implementation;
 
 namespace EPiServer.Forms.Demo.Implementation
 {
@@ -14,11 +15,11 @@ namespace EPiServer.Forms.Demo.Implementation
     /// Add more information to the redirection url when navigating to "Thank you page" after submitting Form.
     /// </summary>
     [ServiceConfiguration(typeof(IAppendExtraInfoToRedirection))]
-    public class AppendInfoToRedirection : IAppendExtraInfoToRedirection
+    public class AppendInfoToRedirection : DefaultAppendExtraInfoToRedirection
     {
-        public IDictionary<string, object> GetExtraInfo(FormIdentity formIden, Submission submission)
+        public override IDictionary<string, object> GetExtraInfo(FormIdentity formIden, Submission submission)
         {
-            var info = new Dictionary<string, object>();
+            var info = base.GetExtraInfo(formIden, submission);            
             info.Add("DemoParam", "demo value");
             info.Add("FormSubmissionId", submission.Id);
             return info;

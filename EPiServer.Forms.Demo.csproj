@@ -34,9 +34,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer, Version=9.7.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.Core.9.7.2\lib\net45\EPiServer.dll</HintPath>
+    </Reference>
     <Reference Include="EPiServer.ApplicationModules, Version=9.7.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EPiServer.Framework.9.7.2\lib\net45\EPiServer.ApplicationModules.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Cms.Shell.UI, Version=9.4.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.UI.Core.9.4.2\lib\net45\EPiServer.Cms.Shell.UI.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Data, Version=9.7.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -54,13 +70,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EPiServer.Framework.9.7.2\lib\net45\EPiServer.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="EPiServer.Licensing, Version=9.7.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EPiServer.Framework.9.7.2\lib\net45\EPiServer.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="EPiServer.Shell, Version=9.7.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+    <Reference Include="EPiServer.Shell, Version=7.5.394.2, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EPiServer.Framework.9.7.2\lib\net45\EPiServer.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Shell.UI, Version=9.4.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.UI.Core.9.4.2\lib\net45\EPiServer.Shell.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.UI, Version=9.4.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPiServer.CMS.UI.Core.9.4.2\lib\net45\EPiServer.UI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -81,6 +101,7 @@
       <HintPath>..\packages\structuremap.web-signed.3.1.6.186\lib\net40\StructureMap.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -113,9 +134,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementation\Actors\ConfigurableActor.cs" />
+    <Compile Include="Implementation\Actors\ConfigurableActorModel.cs" />
+    <Compile Include="Implementation\Actors\InvisibleActor.cs" />
+    <Compile Include="FormsEventsInitModule.cs" />
     <Compile Include="Implementation\AppendInfoToRedirection.cs" />
     <Compile Include="Controllers\DemoSubmitFormController.cs" />
     <Compile Include="DemoInitializationModule.cs" />
+    <Compile Include="Implementation\VisitorData\DemoVisitorDataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +155,9 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EmbeddedLangFiles\EPiServer.Forms.Demo_EN.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Content Include="License.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

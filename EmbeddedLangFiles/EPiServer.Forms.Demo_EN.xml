@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+  <language name="English" id="en">
+    <episerver>
+      <forms>
+        <visitordatasources>
+          <EPiServer.Forms.Demo.Implementation.VisitorData.DemoVisitorDataSource>
+            <displayname>Demo Visitor Data Source</displayname>
+            <properties>
+              <demo_visitor_data_item_1>Demo Visitor Data - Item #1</demo_visitor_data_item_1>
+              <demo_visitor_data_item_2>Demo Visitor Data - Item #2</demo_visitor_data_item_2>
+            </properties>
+          </EPiServer.Forms.Demo.Implementation.VisitorData.DemoVisitorDataSource>
+        </visitordatasources>
+
+        <submissionactors>
+          <EPiServer.Forms.Demo.Implementation.Actors.ConfigurableActor>
+            <displayname>Demo of Actor with configurable UI</displayname>
+          </EPiServer.Forms.Demo.Implementation.Actors.ConfigurableActor>
+        </submissionactors>
+
+        <externalsystems>
+          <EPiServer.Forms.Demo.Implementation.Actors.examplefieldmapping>
+            <displayname>TestSystem Field Mapping</displayname>
+          </EPiServer.Forms.Demo.Implementation.Actors.examplefieldmapping>
+        </externalsystems>
+
+      </forms>
+    </episerver>
+  </language>
+</languages>
