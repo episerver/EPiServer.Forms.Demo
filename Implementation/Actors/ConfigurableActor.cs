@@ -35,7 +35,7 @@ namespace EPiServer.Forms.Demo.Implementation.Actors
                 transformedData.Add("Demo_" + submissionKv.Key, submissionKv.Value + "_DemoValue");
             }
 
-            //this.SubmissionFieldMappings  // field mappings to get friendly name of each field
+            //this.SubmissionFriendlyNameInfos  // field mappings to get friendly name of each field
             
             // get information from Editor UI of this Actor            
             var configs = Model as IEnumerable<ConfigurableActorModel>;
@@ -50,7 +50,7 @@ namespace EPiServer.Forms.Demo.Implementation.Actors
 
             #region Execute main business of this actor
             
-            // TODO: use the usename, password, to send the transformedData to 3rd party server, or save to XML file
+            // MAIN BUSINESS SHOULD BE HERE: use the usename, password, to send the transformedData to 3rd party server, or save to XML file
             
             #endregion
 
@@ -71,7 +71,7 @@ namespace EPiServer.Forms.Demo.Implementation.Actors
         #region IUIPropertyCustomCollection Members
 
         /// <inheritdoc />
-        public Type PropertyType
+        public virtual Type PropertyType
         {
             get
             {

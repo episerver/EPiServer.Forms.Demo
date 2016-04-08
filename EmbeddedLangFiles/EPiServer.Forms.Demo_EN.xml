@@ -20,9 +20,13 @@
         </submissionactors>
 
         <externalsystems>
-          <EPiServer.Forms.Demo.Implementation.Actors.examplefieldmapping>
-            <displayname>TestSystem Field Mapping</displayname>
-          </EPiServer.Forms.Demo.Implementation.Actors.examplefieldmapping>
+          <EPiServer.Forms.Demo.Implementation.StaticAutofillSystem>
+            <displayname>Demo Autofill System</displayname>
+          </EPiServer.Forms.Demo.Implementation.StaticAutofillSystem>
+
+          <EPiServer.Forms.Demo.Implementation.HardcodeSystem>
+            <displayname>Demo Hardcode System</displayname>
+          </EPiServer.Forms.Demo.Implementation.HardcodeSystem>
         </externalsystems>
 
       </forms>
