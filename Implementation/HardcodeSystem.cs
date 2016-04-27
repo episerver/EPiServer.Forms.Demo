@@ -15,7 +15,7 @@ namespace EPiServer.Forms.Demo.Implementation
             get { return "HardcodeSystem"; }
         }
 
-        public virtual IEnumerable<IDatasource> DataSources
+        public virtual IEnumerable<IDatasource> Datasources
         {
             get
             {
@@ -23,7 +23,8 @@ namespace EPiServer.Forms.Demo.Implementation
                 {
                     Id = "HardcodeSystemDS",
                     Name = "Hardcode System Datasource",
-                    OwnerSystem = this
+                    OwnerSystem = this,
+                    Columns = new Dictionary<string, string> { { "alwaysHardcode", "always Hardcode" } }
                 };
 
                 return new[] { ds1 };
@@ -42,7 +43,7 @@ namespace EPiServer.Forms.Demo.Implementation
                 return Enumerable.Empty<string>();
             }
 
-            if (this.DataSources.Any(ds => ds.Id == selectedDatasource.Id)  // datasource belong to this system
+            if (this.Datasources.Any(ds => ds.Id == selectedDatasource.Id)  // datasource belong to this system
                 && remoteFieldInfos.Any(mi => mi.DatasourceId == selectedDatasource.Id))    // and remoteFieldInfos is for our system datasource
             {
                 return new[] { "Hanoi", "Episerver", "Forms" };
@@ -50,11 +51,6 @@ namespace EPiServer.Forms.Demo.Implementation
 
             return Enumerable.Empty<string>();
         }
-
-        /// <inheritdoc />
-        public Dictionary<string, string> GetDatasourceColumns(string datasourceId)
-        {
-            return new Dictionary<string, string> { { "alwaysHardcode", "always Hardcode" } };
-        }
+        
     }
 }

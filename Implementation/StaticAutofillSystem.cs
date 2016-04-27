@@ -18,7 +18,7 @@ namespace EPiServer.Forms.Demo.Implementation
         /// <summary>
         /// This system does not have datasource, because it is static
         /// </summary>
-        public virtual IEnumerable<IDatasource> DataSources
+        public virtual IEnumerable<IDatasource> Datasources
         {
             get
             {
@@ -26,14 +26,23 @@ namespace EPiServer.Forms.Demo.Implementation
                 {
                     Id = "StaticAutofillDatasource1",
                     Name = "Static Autofill Datasource 1",
-                    OwnerSystem = this
+                    OwnerSystem = this,
+                    Columns = new Dictionary<string, string> { 
+                        { "staticds1email", "static ds1 email" },
+                        { "staticds1firstname", "static ds1 first name" }
+                    }
                 };
 
                 var ds2 = new Datasource()
                 {
                     Id = "StaticAutofillDatasource2",
                     Name = "Static Autofill Datasource 2",
-                    OwnerSystem = this
+                    OwnerSystem = this,
+                    Columns = new Dictionary<string, string> { 
+                        { "staticds2avatar", "static ds2 avatar" },
+                        { "staticds2name", "static ds2 name" },
+                        { "staticds2bio", "static ds2 Bio" }
+                    }
                 };
 
                 return new[] { ds1, ds2 };
@@ -52,7 +61,7 @@ namespace EPiServer.Forms.Demo.Implementation
                 return Enumerable.Empty<string>();
             }
 
-            if (!this.DataSources.Any(ds => ds.Id == selectedDatasource.Id)  // datasource belong to this system
+            if (!this.Datasources.Any(ds => ds.Id == selectedDatasource.Id)  // datasource belong to this system
                 || !remoteFieldInfos.Any(mi => mi.DatasourceId == selectedDatasource.Id))    // and remoteFieldInfos is for our system datasource
             {
                 return Enumerable.Empty<string>();
@@ -101,32 +110,5 @@ namespace EPiServer.Forms.Demo.Implementation
             }
         }
 
-        /// <inheritdoc />
-        public Dictionary<string, string> GetDatasourceColumns(string datasourceId)
-        {
-            var datasourceColumns = new Dictionary<string, string>();
-
-            switch (datasourceId)
-            {
-                case "StaticAutofillDatasource1":
-                    datasourceColumns = new Dictionary<string, string> { 
-                        { "staticds1email", "static ds1 email" },
-                        { "staticds1firstname", "static ds1 first name" }
-                    };
-
-                    break;
-
-                case "StaticAutofillDatasource2":
-                    datasourceColumns = new Dictionary<string, string> { 
-                        { "staticds2avatar", "static ds2 avatar" },
-                        { "staticds2name", "static ds2 name" },
-                        { "staticds2bio", "static ds2 Bio" }
-                    };
-
-                    break;
-            }
-
-            return datasourceColumns;
-        }
     }
 }

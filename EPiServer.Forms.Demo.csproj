@@ -45,7 +45,7 @@
     </Reference>
     <Reference Include="EPiServer">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EPiServer.CMS.Core.9.0.3\lib\net45\EPiServer.dll</HintPath>
+      <HintPath>..\packages\EPiServer.CMS.Core.9.7.0\lib\net45\EPiServer.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Cms.Shell.UI">
       <SpecificVersion>False</SpecificVersion>
@@ -53,23 +53,26 @@
     </Reference>
     <Reference Include="EPiServer.Data">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EPiServer.Framework.9.0.3\lib\net45\EPiServer.Data.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.7.0\lib\net45\EPiServer.Data.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Data.Cache">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EPiServer.Framework.9.0.3\lib\net45\EPiServer.Data.Cache.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.7.0\lib\net45\EPiServer.Data.Cache.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Events">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EPiServer.Framework.9.0.3\lib\net45\EPiServer.Events.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.7.0\lib\net45\EPiServer.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Forms">
+      <HintPath>..\packages\EPiServer.Forms.2.1.0.1\Lib\EPiServer.Forms.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Framework">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EPiServer.Framework.9.0.3\lib\net45\EPiServer.Framework.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.7.0\lib\net45\EPiServer.Framework.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Shell">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EPiServer.Framework.9.0.3\lib\net45\EPiServer.Shell.dll</HintPath>
+      <HintPath>..\packages\EPiServer.Framework.9.7.0\lib\net45\EPiServer.Shell.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Shell.UI">
       <SpecificVersion>False</SpecificVersion>
@@ -143,12 +146,6 @@
     <Compile Include="Implementation\StaticAutofillSystem.cs" />
     <Compile Include="Implementation\VisitorData\DemoVisitorDataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EPiServer.Forms\EPiServer.Forms.csproj">
-      <Project>{d9a5f9ac-9995-46b5-a93a-5ba71a184b49}</Project>
-      <Name>EPiServer.Forms</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
