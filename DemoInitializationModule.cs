@@ -1,5 +1,4 @@
-﻿using EPiServer.Forms.Controllers;
-using EPiServer.Forms.Core;
+﻿using EPiServer.Forms.Core;
 using EPiServer.Forms.Demo.Implementation;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
@@ -8,7 +7,7 @@ using EPiServer.Web.Hosting;
 
 namespace EPiServer.Forms.Demo
 {
-    public class TestInitializationModule : IInitializableModule, IConfigurableModule
+    public class DemoInitializationModule : IInitializableModule, IConfigurableModule
     {
         protected ServiceConfigurationContext _serviceConfigurationContext;
 
@@ -25,13 +24,8 @@ namespace EPiServer.Forms.Demo
             });
         }
 
-        public void Preload(string[] parameters)
-        {
-        }
-
-        public void Uninitialize(InitializationEngine context)
-        {
-        }
+        public void Preload(string[] parameters) {}
+        public void Uninitialize(InitializationEngine context) {}
         
     }
 }
