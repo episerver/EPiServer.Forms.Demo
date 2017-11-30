@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/bin
+/.nuget
+/obj/Debug
+/packages
+/EPiServer.Forms.Demo.v12.suo

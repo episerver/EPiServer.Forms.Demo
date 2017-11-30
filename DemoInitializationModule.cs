@@ -1,5 +1,7 @@
 ﻿using EPiServer.Forms.Core;
 using EPiServer.Forms.Demo.Implementation;
+using EPiServer.Forms.Demo.Security;
+using EPiServer.Forms.Internal.Security;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
@@ -21,6 +23,7 @@ namespace EPiServer.Forms.Demo
             _serviceConfigurationContext.Container.Configure(c =>
             {
                 c.For<IAppendExtraInfoToRedirection>().Use(new AppendInfoToRedirection());  // use our demo extra info
+                c.For<IAntiForgeryService>().Use<CustomAntiForgeryService>();
             });
         }
 
