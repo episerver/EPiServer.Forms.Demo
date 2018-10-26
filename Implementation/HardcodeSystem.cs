@@ -2,6 +2,9 @@
 using EPiServer.Forms.Core.Internal.ExternalSystem;
 using System.Collections.Generic;
 using System.Linq;
+using EPiServer.Forms.Core;
+using System;
+using System.Web;
 
 namespace EPiServer.Forms.Demo.Implementation
 {
@@ -36,7 +39,7 @@ namespace EPiServer.Forms.Demo.Implementation
         /// </summary>
         /// <param name="fieldMappingKeys">List of field mapping keys</param>
         /// <returns>Collection of suggested value</returns>
-        public virtual IEnumerable<string> GetSuggestedValues(IDatasource selectedDatasource, IEnumerable<RemoteFieldInfo> remoteFieldInfos)
+        public virtual IEnumerable<string> GetSuggestedValues(IDatasource selectedDatasource, IEnumerable<RemoteFieldInfo> remoteFieldInfos, ElementBlockBase content, IFormContainerBlock formContainerBlock, HttpContextBase context)
         {
             if (selectedDatasource == null || remoteFieldInfos == null)
             {
@@ -51,6 +54,5 @@ namespace EPiServer.Forms.Demo.Implementation
 
             return Enumerable.Empty<string>();
         }
-        
     }
 }

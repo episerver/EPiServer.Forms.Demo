@@ -80,7 +80,7 @@ namespace EPiServer.Forms.Demo.Controllers
                 Thread.CurrentThread.CurrentUICulture = new CultureInfo(formLanguage);
             }
 
-            var js = ControllerContext.RenderWebFormViewToString<FormContainerBlock>(Paths.ToResource(GetType(), "Views/FormContainerInitScript.ascx"), formContainer, viewDataDic);
+            var js = ControllerContext.RenderWebFormViewToString<FormContainerBlock>(Paths.ToResource(typeof(EPiServer.Forms.Controllers.DataSubmitController), "Views/FormContainerInitScript.ascx"), formContainer, viewDataDic);
 
             return JavaScript(js);
         }
