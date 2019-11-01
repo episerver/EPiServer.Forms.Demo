@@ -9,10 +9,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace EPiServer.Forms.Demo.Implementation.Actors
 {
     /// <summary>
+    ///     Example of custom actor that modifies submission data and uses configured values for business.
     /// </summary>
     public class ConfigurableActor : PostSubmissionActorBase, IUIPropertyCustomCollection
     {
@@ -22,12 +22,14 @@ namespace EPiServer.Forms.Demo.Implementation.Actors
             var ret = string.Empty;
 
             #region Inspect some important inputs of this Actor
-            
+
             //this.FormIdentity   // info about which Form is submitting
             //this.HttpRequestContext // Http context, which perform the submission
             //this.Model  // model of the Actor (values from EditView)
-            
+
             //this.SubmissionData   // actual submission data
+            //this.PerformOnEveryStepSubmission // If this is true, this actor will be called on every submission, include step submission.
+
             /// transform the submission data
             var transformedData = new Dictionary<string, object>();
             foreach (var submissionKv in this.SubmissionData.Data)

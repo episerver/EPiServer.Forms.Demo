@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EPiServer.Forms.Demo</RootNamespace>
     <AssemblyName>EPiServer.Forms.Demo</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -38,49 +38,56 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="EPiServer">
-      <HintPath>packages\EPiServer.CMS.Core.10.9.1\lib\net45\EPiServer.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>packages\EPiServer.CMS.Core.11.12.0\lib\net461\EPiServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.AddOns.Helpers">
+      <HintPath>packages\EPiServer.AddOns.Helpers.0.4.0.0\Lib\EPiServer.AddOns.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Cms.Shell.UI">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\EPiServer.CMS.UI.Core.10.7.0\lib\net45\EPiServer.Cms.Shell.UI.dll</HintPath>
+      <HintPath>packages\EPiServer.CMS.UI.Core.11.3.0\lib\net461\EPiServer.Cms.Shell.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Configuration">
+      <HintPath>packages\EPiServer.CMS.AspNet.11.12.0\lib\net461\EPiServer.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Data">
-      <HintPath>packages\EPiServer.Framework.10.9.1\lib\net45\EPiServer.Data.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>packages\EPiServer.Framework.11.12.0\lib\net461\EPiServer.Data.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Forms">
-      <HintPath>packages\EPiServer.Forms.4.8.0\lib\EPiServer.Forms.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>packages\EPiServer.Forms.4.26.0\lib\EPiServer.Forms.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Forms.Core">
-      <HintPath>packages\EPiServer.Forms.Core.4.8.0\lib\EPiServer.Forms.Core.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>packages\EPiServer.Forms.Core.4.26.0\lib\EPiServer.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Forms.UI">
-      <HintPath>packages\EPiServer.Forms.UI.4.8.0\lib\EPiServer.Forms.UI.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>packages\EPiServer.Forms.UI.4.26.0\lib\EPiServer.Forms.UI.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Framework">
-      <HintPath>packages\EPiServer.Framework.10.9.1\lib\net45\EPiServer.Framework.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>packages\EPiServer.Framework.11.12.0\lib\net461\EPiServer.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Framework.AspNet">
+      <HintPath>packages\EPiServer.Framework.AspNet.11.12.0\lib\net461\EPiServer.Framework.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.ServiceLocation.StructureMap">
+      <HintPath>packages\EPiServer.ServiceLocation.StructureMap.2.0.2\lib\net461\EPiServer.ServiceLocation.StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Shell">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\EPiServer.CMS.UI.Core.10.7.0\lib\net45\EPiServer.Shell.dll</HintPath>
+      <HintPath>packages\EPiServer.CMS.UI.Core.11.3.0\lib\net461\EPiServer.Shell.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Shell.UI">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\EPiServer.CMS.UI.Core.10.7.0\lib\net45\EPiServer.Shell.UI.dll</HintPath>
+      <HintPath>packages\EPiServer.CMS.UI.Core.11.3.0\lib\net461\EPiServer.Shell.UI.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.UI">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\EPiServer.CMS.UI.Core.10.7.0\lib\net45\EPiServer.UI.dll</HintPath>
+      <HintPath>packages\EPiServer.CMS.UI.Core.11.3.0\lib\net461\EPiServer.UI.dll</HintPath>
     </Reference>
     <Reference Include="EPiServer.Web.WebControls">
-      <HintPath>packages\EPiServer.CMS.Core.10.9.1\lib\net45\EPiServer.Web.WebControls.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>packages\EPiServer.CMS.AspNet.11.12.0\lib\net461\EPiServer.Web.WebControls.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson">
       <SpecificVersion>False</SpecificVersion>
@@ -99,31 +106,28 @@
       <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\structuremap-signed.3.1.9.463\lib\net40\StructureMap.dll</HintPath>
+      <HintPath>packages\StructureMap.4.5.2\lib\net45\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap.Net4">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\structuremap-signed.3.1.9.463\lib\net40\StructureMap.Net4.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap.Web">
+      <HintPath>packages\structuremap.web.4.0.0.315\lib\net40\StructureMap.Web.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Dataflow">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -133,6 +137,7 @@
     <Compile Include="Implementation\Actors\ConfigurableActorModel.cs" />
     <Compile Include="Implementation\Actors\InvisibleActor.cs" />
     <Compile Include="FormsEventsInitModule.cs" />
+    <Compile Include="Implementation\Actors\SaveToFileActor.cs" />
     <Compile Include="Implementation\AppendInfoToRedirection.cs" />
     <Compile Include="Controllers\DemoSubmitFormController.cs" />
     <Compile Include="DemoInitializationModule.cs" />
@@ -157,6 +162,7 @@
     </EmbeddedResource>
     <Content Include="License.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

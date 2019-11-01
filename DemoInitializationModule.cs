@@ -11,24 +11,21 @@ namespace EPiServer.Forms.Demo
 {
     public class DemoInitializationModule : IInitializableModule, IConfigurableModule
     {
-        protected ServiceConfigurationContext _serviceConfigurationContext;
 
-        public void ConfigureContainer(ServiceConfigurationContext serviceConfigurationContext)
+        public void ConfigureContainer(ServiceConfigurationContext context)
         {
-            _serviceConfigurationContext = serviceConfigurationContext;
+            context.ConfigurationComplete += (o, e) =>
+            {
+                context.Services.AddTransient<IAppendExtraInfoToRedirection, AppendInfoToRedirection>()
+                    .AddTransient<IAntiForgeryService, CustomAntiForgeryService>();
+            };
         }
 
         public void Initialize(InitializationEngine context)
         {
-            _serviceConfigurationContext.Container.Configure(c =>
-            {
-                c.For<IAppendExtraInfoToRedirection>().Use(new AppendInfoToRedirection());  // use our demo extra info
-                c.For<IAntiForgeryService>().Use<CustomAntiForgeryService>();
-            });
         }
 
         public void Preload(string[] parameters) {}
         public void Uninitialize(InitializationEngine context) {}
-        
     }
 }
